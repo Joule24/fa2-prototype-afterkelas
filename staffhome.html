@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop-down Profile Menu - Easy Tutorials</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+</head>
+<body>
+  <div class="hero">
+    <nav class="flex-nav">
+      <img src="logo.png" class="logo">
+      <ul class="navigation-menu">
+        <li><a href="staffhome.html" class="home-link">Home</a></li>
+        <li><a href="stafftimetable.html" class="timetable-link">Timetable</a></li>
+        <li><a href="notice.html" class="library-link">Notice</a></li>
+      </ul>
+      <div id="clock" class="clock"></div>
+      <img src="profile.png" class="user-pic" onclick="toggleMenu()">
+      <div class="sub-menu-wrap" id="subMenu">
+        <div class="sub-menu">
+          <div class="user-info">
+            <img src="profile-picture.jpg">
+            <h2> MO SALAH </h2>
+          </div>
+          <hr>
+          <a href="staffprofile.html" class="sub-menu-link">
+            <img src="profile.png">
+            <p>Edit Profile</p>
+            <span>></span>
+          </a>
+          <a href="Sign in.html" class="sub-menu-link">
+            <img src="logout.png">
+            <p>Log out</p>
+            <span>></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    let subMenu = document.getElementById("subMenu");
+
+    function toggleMenu(){
+      subMenu.classList.toggle("open-menu");
+    }
+
+    // Function to display digital clock with date and day
+    function digitalClock() {
+      const clock = document.getElementById("clock");
+      setInterval(() => {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        
+        // Get Day of the Week (Sunday = 0)
+        const day = now.getDay();
+        const dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][day];
+        
+        // Get Month (0-indexed)
+        const month = now.getMonth();
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const monthName = monthNames[month];
+        
+        // Get Date (day of the month)
+        const date = now.getDate();
+        
+        // Update time string with date before month
+        const timeString = `${date} ${monthName} ${dayOfWeek}, ${hours}:${minutes}:${seconds}`;
+        clock.textContent = timeString;
+      }, 1000); // Update every second
+    }
+
+    // Call the function to start the clock
+    digitalClock();
+  </script>
+  <div class="wrapper">
+    <img class="homepage" src="logo2.jpg">
+  </div>
+<main>
+    <div class="content-left">
+        <h1>Hello, Welcome Back! </h1>
+        <h2>We need your humble service</h2>
+        <h2>Biology, Physics, Chemistry, Maths & Programming Online Tutor</h2>
+        <a href="staffapproval.html" class="cta">Teach now</a>
+    </div>
+    
+</main>
+
+<footer>
+    <div class="address">
+        <p>833, Lingkungan Budi, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+        <p>Tel: 03-7967 5800</p>
+        <p>Copyright &copy; Pusat Asasi Sains Universiti Malaya 2024</p>
+    </div>
+    <div class="social-links">
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://twitter.com">X (Twitter)</a>
+        <a href="https://youtube.com">Youtube</a>
+    </div>
+</footer>
+
+</body>
+</html>

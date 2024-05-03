@@ -1,0 +1,110 @@
+.table1 {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    border-spacing: 6px ;
+    padding: 1px;
+    max-width: 30%; /* Set the width of the table to 50% of the parent container */
+    border-collapse: separate; /* Collapse borders for a cleaner look */
+
+    border: px solid rgb(237, 236, 236, 0.877); /* Add a border around the table */
+}
+
+/* Targeting the headers in the first table */
+.table1 th {
+
+    background: rgba(231, 231, 231, 0.885); /* Add a background color to the header cells */
+    padding: 3px;
+}
+
+.table{
+    font-size: 25px;
+    font-weight:bold;
+    border-spacing: 8px;
+    max-width: 150%; /* Set the width of the table to 50% of the parent container */
+    border-collapse: separate; /* Collapse borders for a cleaner look */
+    margin-left: 4%;
+    margin-bottom:2%;
+    border: px solid rgb(255, 255, 255); /* Add a border */
+}
+
+.table2 th {
+    max-width: 200px;
+    padding: 10px;
+
+}
+
+.table2 tr {
+    max-width: 200px;
+}
+
+.table3 td {
+    padding: 20px;
+}
+
+.banner{
+    max-width: 100%;
+    height: auto;
+    font-family:'Rajdhani';
+    background-image: url('meow.jpg'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+
+.banner h1 {
+    font-size: 50px;
+}
+
+.meow{
+    max-width: 250px;
+    margin-left:auto;
+    top:10%;
+}
+
+header{
+    position: relative ;
+    margin-right: 15%;
+    max-width:100% ;
+    padding:20px 100px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline ;
+    z-index: 100;
+}
+
+.navbar a{
+    font-family: 'Rajdhani';
+    font-size: 18px;
+    font-weight:bold;
+    color: #000000 ;
+    font-weight: 500px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.navbar a:hover::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+}
+
+.font {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: left;
+}
+
+.font a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none; 
+}

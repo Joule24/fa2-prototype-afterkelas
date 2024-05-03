@@ -1,0 +1,35 @@
+.meow{
+    max-width: 250px;
+    margin-left:auto;
+    top:10%;
+}
+
+header{
+    position: relative ;
+    margin-right: 15%;
+    max-width:100% ;
+    padding:20px 100px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline ;
+    z-index: 100;
+}
+
+.navbar a{
+    font-family: 'Rajdhani';
+    font-size: 18px;
+    font-weight:bold;
+    color: #000000 ;
+    font-weight: 500px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.navbar a:hover::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+}

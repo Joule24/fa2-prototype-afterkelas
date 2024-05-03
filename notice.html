@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notice Board</title>
+
+    <link rel="stylesheet" type="text/css" href="profilepage.css">
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <header class="wrapper">
+        <img class="meow" src="meowmeow.jpg">
+    
+        <nav class="navbar">
+            <a href="staffhome.html">Home</a>
+            <a href="stafftimetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="staffapproval.html">Booking</a>
+            <a href="staffprofile.html">Profile</a>
+            <a href="staffaboutus.html">About us</a>
+    </nav>
+    </header>
+    
+    <style>
+        body {
+            font-family: 'Rajdhani';
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+        .banner {
+            width: 100%;
+            height: 100px; 
+            background-image: url('banner.jpg'); 
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .notice-board {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .notice {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .notice:last-child {
+            border-bottom: none;
+        }
+
+        .notice .title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .notice .date {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .notice .description {
+            margin-top: 5px;
+        }
+
+        .add-notice {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .add-notice input,
+        .add-notice textarea,
+        .add-notice button {
+            margin-bottom: 10px;
+        }
+
+        .add-notice button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-notice button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Staff Notice</h1>
+    </div>
+    <div class="notice-board">
+        <h2>Notice Board</h2>
+        <style>
+            /* Styles for the notice board box */
+            .notice-board {
+                border: 2px solid #000; /* black border */
+                padding: 20px;
+                border-radius: 10px; /* rounded corners */
+                background-color: #c3c9b7; /* light gray background */
+                width: 300px; /* fixed width */
+                margin: 20px auto; /* centered with auto margin */
+            }
+    
+            /* Style for individual notices */
+            .notice {
+                border-bottom: 1px solid #ddd; /* light gray border for separating notices */
+                padding: 10px 0; /* padding top and bottom */
+            }
+    
+            .notice:last-child {
+                border-bottom: none; /* remove border on the last notice */
+            }
+    
+            /* Title styling */
+            .title {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+    
+            /* Date styling */
+            .date {
+                color: #555; /* dark gray for dates */
+                font-size: 0.9em; /* smaller font size */
+            }
+    
+            /* Styles for the "Add New Notice" section */
+            .add-notice {
+                padding: 20px;
+                background-color: #e09b40; /* lighter gray background */
+                border: 1px solid #ddd;
+                border-radius: 5px; /* slight rounding of corners */
+                width: 300px;
+                margin: 20px auto; /* centered with auto margin */
+            }
+    
+            /* Styles for input fields */
+            #title, #date, #description {
+                display: block;
+                width: 100%; /* full width */
+                padding: 05px; /* padding for comfort */
+                margin-bottom: 10px; /* spacing between fields */
+                border: 1px solid #ccc; /* light gray border */
+                border-radius: 5px; /* rounding corners */
+            }
+    
+            /* Styles for the Add Notice button */
+            button {
+                padding: 10px 20px; /* padding for button */
+                background-color: #34b238; /* green background */
+                color: white; /* white text */
+                border: none; /* no border */
+                border-radius: 5px; /* rounded corners */
+                cursor: pointer; /* pointer cursor */
+            }
+    
+            button:hover {
+                background-color: #45a049; /* darker green on hover */
+            }
+
+            footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            }
+            .social-links {
+                margin-top: 10px;
+            }
+            .social-links a {
+                color: #fff;
+                margin: 0 5px;
+                text-decoration: none;
+            }
+
+        </style>
+        <div class="notice">
+            <div class="title">Office Closed</div>
+            <div class="date">May 1, 2024</div>
+            <div class="description">The office will be closed for Labor Day.</div>
+        </div>
+
+        <div class="notice">
+            <div class="title">Staff Meeting</div>
+            <div class="date">May 2, 2024</div>
+            <div class="description">Staff meeting at 10:00 AM in conference room B.</div>
+        </div>
+    </div>
+
+    <div class="add-notice">
+        <h3>Add New Notice</h3>
+        <input type="text" id="title" placeholder="Notice Title">
+        <input type="date" id="date">
+        <textarea id="description" placeholder="Notice Description"></textarea>
+        <button onclick="addNotice()">Add Notice</button>
+    </div>
+
+    <script>
+        function addNotice() {
+            var title = document.getElementById("title").value;
+            var date = document.getElementById("date").value;
+            var description = document.getElementById("description").value;
+
+            if (title && date && description) {
+                var noticeBoard = document.querySelector(".notice-board");
+
+                var newNotice = document.createElement("div");
+                newNotice.className = "notice";
+
+                var titleDiv = document.createElement("div");
+                titleDiv.className = "title";
+                titleDiv.textContent = title;
+
+                var dateDiv = document.createElement("div");
+                dateDiv.className = "date";
+                dateDiv.textContent = new Date(date).toLocaleDateString();
+
+                var descriptionDiv = document.createElement("div");
+                descriptionDiv.className = "description";
+                descriptionDiv.textContent = description;
+
+                newNotice.appendChild(titleDiv);
+                newNotice.appendChild(dateDiv);
+                newNotice.appendChild(descriptionDiv);
+
+                noticeBoard.appendChild(newNotice);
+
+                // Clear input fields
+                document.getElementById("title").value = "";
+                document.getElementById("date").value = "";
+                document.getElementById("description").value = "";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+
+    <footer>
+        <div class="address">
+            <p>833, Lingkungan Budi, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+            <p>Tel: 03-7967 5800</p>
+            <p>Copyright &copy; Pusat Asasi Sains Universiti Malaya 2024</p>
+        </div>
+        <div class="social-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://twitter.com">X (Twitter)</a>
+            <a href="https://youtube.com">Youtube</a>
+        </div>
+    </footer>
+
+</body>
+</html>

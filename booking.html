@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" type="text/css" href="booking.css">
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <header class="wrapper">
+        <img class="meow" src="meowmeow.jpg">
+    
+        <nav class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="Timetable.html">Timetable</a>
+            <a href="My Library.html">My library</a>
+            <a href="booking.html">Booking</a>
+            <a href="profilepage.html">Profile</a>
+            <a href="aboutus.html">About us</a>
+    </nav>
+    </header>
+
+    <style>
+        body {
+            font-family: 'Rajdhani';
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+
+        select {
+            width: 11%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        option{
+            font-size: 10px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100px; 
+            background-image: url('banner.jpg'); 
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .notice:nth-child(2) { /* Select second .notice element */
+            margin-right: auto;
+        }
+        .notice:nth-child(1) {
+            margin-left: 0; /* Remove potential default margin */
+        }
+        .book-nowbutton {
+            background-color: #854803; /* Orange color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to indicate clickability */
+        }
+
+        .choice {
+            background-color: #ebcca8; /* Orange color */
+            color: rgb(59, 41, 3);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to indicate clickability */
+        }
+
+
+        .banner h1 {
+            font-size: 36px;
+        }
+        .notice {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: left;
+            padding: 20px;
+        }
+
+        .biggie {
+            height: 100%;
+            display: flex;
+            justify-content: left; /* Or other options */
+            gap: 0; /* Reset gap between flex items */
+        }  
+
+        .biggie > * {
+            margin: 0; /* Reset margin on flex items */
+            padding: 0; /* Reset padding on flex items */
+        }
+
+
+        .box {
+            width: calc(250% - 20px); /* Adjust as needed */
+            height: 40px;
+            margin: 0px;
+            background-color: #868686;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .divider {
+
+            width: calc(50% - 20px); /* Adjust as needed */
+            margin: 0px;
+            justify-content: left;
+        }
+
+        .approval {
+
+            width: calc(250% - 20px); 
+            margin: 0px;
+            display: flex;
+            justify-content: left;
+        }
+
+        .box2 {
+            width: calc(250% - 20px); /* Adjust as needed */
+            height: 40px;
+            margin: 0px;
+            background-color: #868686;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .bookbox {
+            width: calc(100% - 20px); /* Adjust as needed */
+            height: 80px;
+            margin: 10px 0;
+            background-color: #faa84b;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow:0 0 5px #000000;
+        }
+
+        .smallerbox{
+            width: calc(250% - 20px); /* Adjust as needed */
+            height: 30px;
+            margin: 0px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+
+        }
+        .smallerbox2{
+            width: calc(250% - 20px); /* Adjust as needed */
+            height: 30px;
+            margin: 0px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+
+        }
+
+        .ongoing{
+            width: calc(50% - 20px); /* Adjust as needed */
+            height: 30px;
+            margin: 0px;
+            background-color: #e7dc9b;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+        
+        }
+
+        .box p, .smallerbox p, .box2 p, .smallerbox2 p,.ongoing p  {
+        font-size: 11px; /* Adjust as needed */
+        }
+        .box h2, .smallerbox h2, .box2 h2,.smallerbox2 h2 {
+        font-size: 15px; /* Adjust as needed */
+        }
+
+        .notice{
+            flex-grow: 1; /* Both elements will grow equally */
+                         /* Adjust width as needed */
+            width: 45%; /* Example width */
+            box-sizing: border-box; /* Prevent margin collapsing */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 300px;
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Booking</h1>
+    </div>
+    <div class="biggie">
+        <div class="divider">
+            <div class="notice">
+                <div class="box">
+                    <h2>NOTICED!</h2>
+                </div>
+                <div class="smallerbox">
+                    <p>Replacement for Physics before 2.4</p>
+                </div>
+                <div class="smallerbox">
+                    <p>Replacement for Chemistry before 28.3</p>
+                </div>
+            </div>
+
+            <div class="notice">
+                <div class="box2">
+                    <h2>Replacement Class Status</h2>
+                </div>
+                <div class="approval">
+                    <div class="smallerbox2">
+                        <p id="bookedClass">Functioning Box</p>
+                    </div>
+                    <div class="ongoing">
+                        <p id="see1">Ongoing...</p>
+                    </div>
+                </div>
+
+                <div class="approval">
+                    <div class="smallerbox2">
+                        <p id = "bookedClass1">Functioning Box</p>
+                    </div>
+                    <div class="ongoing">
+                        <p id="see2">Ongoing...</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class="notice">
+            <div class="bookbox">
+                <label for="mySelect" title="This is the tooltip text for the select element">subject:</label>
+                <select class="choice" id="mySubject">
+                    <option>Physics</option>
+                    <option>Math</option>
+                    <option>Chemistry</option>
+                    <option>Programming</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Tutor:</label>
+                <select class="choice" id="myTutor">
+                    <option>SHM</option>
+                    <option>NHR</option>
+                    <option>MWL</option>
+                    <option>SWW</option>
+                    <object>LMM</object>
+                    <option>AHM</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Date:</label>
+                <select class="choice" id="myDate">
+                    <option>2.3</option>
+                    <option>3.3</option>
+                    <option>4.3</option>
+                    <option>5.3</option>
+                    <option>6.3</option>
+                    <option>9.3</option>
+                    <option>10.3</option>
+                    <option>11.3</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Time:</label>
+                <select class="choice" id="myTime">
+                    <option>2:30</option>
+                    <option>1:30</option>
+                    <option>4:00</option>
+                    <option>5:30</option>
+                    <option>8:00</option>
+                    <option>9:00</option>
+                </select>
+
+                <button class="book-nowbutton" id="book-now-button1">Book Now</button>
+
+
+
+            </div>
+            <div class="bookbox">
+                <label for="mySelect" title="This is the tooltip text for the select element">subject:</label>
+                <select class="choice" id="mySubject1">
+                    <option>Physics</option>
+                    <option>Math</option>
+                    <option>Chemistry</option>
+                    <option>Programming</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Tutor:</label>
+                <select class="choice" id="myTutor1">
+                    <option>SHM</option>
+                    <option>NHR</option>
+                    <option>MWL</option>
+                    <option>SWW</option>
+                    <object>LMM</object>
+                    <option>AHM</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Date:</label>
+                <select class="choice" id="myDate1">
+                    <option>2.3</option>
+                    <option>3.3</option>
+                    <option>4.3</option>
+                    <option>5.3</option>
+                    <option>6.3</option>
+                    <option>9.3</option>
+                    <option>10.3</option>
+                    <option>11.3</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Time:</label>
+                <select class="choice" id="myTime1">
+                    <option>2:30</option>
+                    <option>1:30</option>
+                    <option>4:00</option>
+                    <option>5:30</option>
+                    <option>8:00</option>
+                    <option>9:00</option>
+                </select>
+
+                <button class="book-nowbutton" id="book-now-button2">Book Now</button>
+
+
+
+            </div>
+
+            <div class="bookbox">
+                <label for="mySelect" title="This is the tooltip text for the select element">subject:</label>
+                <select class="choice" id="mySelect">
+                    <option>Physics</option>
+                    <option>Math</option>
+                    <option>Chemistry</option>
+                    <option>Programming</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Tutor:</label>
+                <select class="choice" id="mySelect">
+                    <option>SHM</option>
+                    <option>NHR</option>
+                    <option>MWL</option>
+                    <option>SWW</option>
+                    <object>LMM</object>
+                    <option>AHM</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Date:</label>
+                <select class="choice" id="mySelect">
+                    <option>2.3</option>
+                    <option>3.3</option>
+                    <option>4.3</option>
+                    <option>5.3</option>
+                    <option>6.3</option>
+                    <option>9.3</option>
+                    <option>10.3</option>
+                    <option>11.3</option>
+                </select>
+                <label for="mySelect" title="This is the tooltip text for the select element">Time:</label>
+                <select class="choice" id="mySelect">
+                    <option>2:30</option>
+                    <option>1:30</option>
+                    <option>4:00</option>
+                    <option>5:30</option>
+                    <option>8:00</option>
+                    <option>9:00</option>
+                </select>
+
+                <button class="book-nowbutton" id="book-now-button3">Book Now</button>
+
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const bookNowButton3 = document.getElementById("book-now-button3");
+        const bookclass = document.getElementById("bookedClass");
+        const bookclass1 = document.getElementById("bookedClass1");
+        const see1 = document.getElementById("see1");
+        const see2 = document.getElementById("see2");
+
+        bookNowButton3.addEventListener("click", function() {
+        alert("You have clicked the Book Now button!");
+        });
+
+        const bookNowButton2 = document.getElementById("book-now-button2");
+
+        bookNowButton2.addEventListener("click", function() {
+            const selectedSubject1= document.getElementById("mySubject1").value;
+            const selectedTutor1= document.getElementById("myTutor1").value;
+            const selectedDate1= document.getElementById("myDate1").value;
+            const selectedTime1= document.getElementById("myTime1").value;
+
+            localStorage.setItem('subject1', selectedSubject1);
+            localStorage.setItem('tutor1', selectedTutor1);
+            localStorage.setItem('date1', selectedDate1);
+            localStorage.setItem('time1', selectedTime1);
+            bookclass1.textContent = selectedSubject1 + "-" + selectedTutor1 + "-" + selectedDate1 + "-" + selectedTime1;
+        });
+
+        const bookNowButton1 = document.getElementById("book-now-button1");
+
+        bookNowButton1.addEventListener("click", function() {
+            const selectedSubject= document.getElementById("mySubject").value;
+            const selectedTutor= document.getElementById("myTutor").value;
+            const selectedDate= document.getElementById("myDate").value;
+            const selectedTime= document.getElementById("myTime").value;
+
+            localStorage.setItem('subject', selectedSubject);
+            localStorage.setItem('tutor', selectedTutor);
+            localStorage.setItem('date', selectedDate);
+            localStorage.setItem('time', selectedTime);
+            bookclass.textContent = selectedSubject + "-" + selectedTutor + "-" + selectedDate + "-" + selectedTime;
+        });
+            const localSubject=localStorage.getItem('subject');
+            const localTutor=localStorage.getItem('tutor');
+            const localDate=localStorage.getItem('date');
+            const localTime=localStorage.getItem('time');
+            const localSubject1=localStorage.getItem('subject1');
+            const localTutor1=localStorage.getItem('tutor1');
+            const localDate1=localStorage.getItem('date1');
+            const localTime1=localStorage.getItem('time1');
+
+            const check1 = localStorage.getItem('check1');
+            const check2 = localStorage.getItem('check2');
+            // Update the content of the "bookedClass" element
+            bookclass.textContent = localSubject + "-" + localTutor + "-" + localDate + "-" + localTime;
+            bookclass1.textContent = localSubject1 + "-" + localTutor1 + "-" + localDate1 + "-" + localTime1;
+
+            see1.textContent = check1;
+            see2.textContent = check2;
+
+    </script>
+
+<footer>
+    <div class="address">
+        <p>833, Lingkungan Budi, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+        <p>Tel: 03-7967 5800</p>
+        <p>Copyright &copy; Pusat Asasi Sains Universiti Malaya 2024</p>
+    </div>
+    <div class="social-links">
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://twitter.com">X (Twitter)</a>
+        <a href="https://youtube.com">Youtube</a>
+    </div>
+</footer>
+
+</body>
+</html>

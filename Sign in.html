@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+
+    <header class="wrapper">
+        <img class="meow" src="meowmeow.jpg">
+    
+        <nav class="navbar">
+            <a href="Sign in.html">Home</a>
+            <a href="Sign in.html">Timetable</a>
+            <a href="Sign in.html">My library</a>
+            <a href="Sign in.html">Booking</a>
+            <a href="Sign in.html">Profile</a>
+            <a href="no-account-aboutus.html">About us</a>
+        </nav>
+    </header>
+
+    <style>
+        body {
+            font-family: 'Rajdhani';
+            margin: 0;
+            padding: 0;
+            background-color:white;
+        }
+        .banner {
+            width: 100%;
+            height: 100px; 
+            background-image: url('banner.jpg'); 
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="banner">
+        <h1>Sign In</h1>
+    </div>
+   
+    <div class="login-container">
+        <form id="login-form">
+            <div class="form-group">
+                <label for="role"></label>
+                <select id="role" name="role" required>
+                    <option value="staff">Staff</option>
+                    <option value="student">Student</option>
+                </select>
+                <span class="error-message" id="role-error"></span>
+            </div>
+
+            <div class="Hi">
+                <h4>Hi, Welcome back!</h4>
+            </div>
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username or Email Address" required>
+                <span class="error-message" id="username-error"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <span class="error-message" id="password-error"></span>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="keep-signed-in" name="keep-signed-in">
+                <label for="keep-signed-in">Keep me signed in</label>
+            </div>
+            <div class="hello"><a href="#">Forgot?</a></div>
+            <!-- The sign-in button with a default href -->
+            <button type="submit" class="login-button" id="login-button" href="Home.html">Sign In</button>
+        </form>
+        <div class="additional-links">
+            <a href="#">Don't have an account?</a>
+            <a href="#">Register Now</a>
+        </div>
+    </div>
+
+    <script src="login.js"></script> 
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Rajdhani';
+  background-color: #ffffff; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Banner Styling */
+.meow{
+    max-width: 250px;
+    margin-left:auto;
+    top:10%;
+}
+
+header{
+    position: relative ;
+    margin-right: 15%;
+    max-width:100% ;
+    padding:20px 100px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline ;
+    z-index: 100;
+}
+
+.navbar a{
+  font-family: 'Rajdhani';
+    font-size: 19px;
+    font-weight:bold;
+    color: #000000 ;
+    font-weight: 500px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.navbar a:hover::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+} 
+
+
+/* Login Container */
+.login-container {
+  font-family: 'Rajdhani';
+  background-color: white; /* White background */
+
+  padding: 2rem; /* Padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Light shadow */
+  width: 400px; /* Fixed width */
+  text-align: center; /* Centered text */
+  margin-top: 4rem;
+  margin-bottom: 2rem; /* Add space due to banner */
+  height: 350px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1rem; /* Space between form elements */
+  
+}
+
+/* Labels */
+label {
+  font-family: 'Rajdhani';
+  display: block;
+  font-weight: bold; /* Bold font for labels */
+  margin-bottom: 0.5rem; /* Space between label and input */
+  
+}
+
+/* Input Fields */
+input {
+  position:relative;
+  bottom: 50px;
+  padding-right: 20px;
+  font-family: 'Rajdhani';
+  width: 100%; /* Full width */
+  padding: 0.3rem; /* Padding inside the field */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+select {
+  position:relative;
+  bottom: 25px;
+  display: flex;;
+  font-family: 'Rajdhani';
+  width: 20%; /* Full width */
+  padding: 0.1rem; /* Padding inside the field */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Login Button */
+.login-button {
+  font-family: 'Rajdhani';
+  padding: 0.75rem; /* Padding for the button */
+  background-color: #e56120; /* Green background */
+  color: white; /* White text */
+  border: none;
+  width:340px;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-weight: bold; /* Bold font */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  position: relative;
+  bottom: 80px;
+}
+
+.login-button a {
+    color: white;
+}
+
+/* Button Hover Effect */
+.login-button:hover {
+  font-family: 'Rajdhani';
+  background-color: #d04E0b; /* Darker green on hover */
+}
+
+/* Error Message Styling */
+.error-message {
+  color: red; /* Red color for errors */
+  font-size: 0.9rem; /* Smaller font */
+  height: 1rem; /* Space for the error message */
+  display: block; /* Block-level element */
+}
+
+/* Additional Links */
+.additional-links {
+  margin-top: 1rem; /* Space between form and additional links */
+  position:relative;
+  bottom: 80px;
+  font-size: small;
+}
+
+/* Link Styling */
+a {
+  color: #000000; /* Green links */
+  text-decoration: none; /* No underline */
+  margin-right: 1rem; /* Space between links */
+}
+
+/* Link Hover Effect */
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.Hi{
+  display: flex;
+  padding-bottom: 10%;
+  position:relative;
+  bottom: 50px;
+}
+
+.checkbox {
+  margin-bottom: 0%;
+  position: relative;
+  bottom: 10px;
+  right: 160px;
+}
+
+.checkbox label{
+
+  position: relative;
+  font-family: 'Rajdhani';
+  bottom: 70px;
+  left: 60px;
+  font-size: 13px
+}
+
+.hello{
+  position: relative;
+  font-family: 'Rajdhani';
+  bottom: 105px;
+  left: 150px;
+  font-size: 13px
+}

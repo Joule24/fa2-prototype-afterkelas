@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Page</title>
+
+<link rel="stylesheet" type="text/css" href="mylibrary.css">
+<link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<header class="wrapper">
+    <img class="meow" src="meowmeow.jpg">
+    
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="Timetable.html">Timetable</a>
+        <a href="My Library.html">My library</a>
+        <a href="booking.html">Booking</a>
+        <a href="profilepage.html">Profile</a>
+        <a href="aboutus.html">About us</a>
+</nav>
+</header>
+
+<style>
+    body {
+        font-family: 'Rajdhani';
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    .banner {
+        width: 100%;
+        height: 100px; 
+        background-image: url('banner.jpg'); 
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+    }
+    .left-box1 {
+        background-color: #0cc638;
+        padding: 60px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 100%;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box2 {
+        background-color: #a44be3;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box3 {
+        background-color: #fbc209;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box4 {
+        background-color: #4536e6;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box5 {
+        background-color: #e12016;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box6 {
+        background-color: #6a6767;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 10px;
+        max-width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-box1:hover{
+        background-color: #0d8629;
+    }
+
+    .left-box2:hover{
+        background-color: #642790;
+    }
+
+    .left-box3:hover{
+        background-color: #8b6d0a;
+    }
+
+    .left-box4:hover{
+        background-color: #2f25a3;
+    }
+    
+    .left-box5:hover{
+        background-color: #9a1912;
+    }
+
+    .left-box6:hover{
+        background-color: #393737;
+    }
+    
+    .right-boxes {
+        width: 65%;
+    }
+    .right-box {
+        background-color: #d55151;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .flashcard {
+        background-color: #B7D9D7;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 100px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #316561;
+        overflow-y: auto; /* Add overflow-y property to enable vertical scrolling */
+    }
+
+    .flashcard-content {
+        max-height: 1000px; /* Set a maximum height for the content */
+    }
+
+
+    .flashcard2 {
+        padding: px;
+        margin-bottom: 20px;
+        height: 10px;
+        font-size: 20px;
+        font-weight: 10px;
+    }
+
+    .summary {
+        background-color: #c3bebe;
+        padding: 20px;
+        margin-bottom: 20px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent boxes from wrapping */
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .class-container {
+        display: inline-flex; /* Use inline-flex to keep elements in a single line */
+    }
+
+    #addClassButton {
+        margin-right: 15px; /* Add some spacing between the last class box and the plus button */
+    }
+
+
+    .box {
+        background-color: #ddd;
+        color: #000000;
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        font-weight: 1;
+        font-size: 30px;
+        margin-top: 10px;
+        white-space: nowrap; /* Prevent boxes from wrapping */
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .notes {
+        background-color: #E5DFCB;
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border-radius: 0px; /* Add border radius */
+        overflow-x: auto;
+        max-width: 255px;
+        
+    }
+
+    .notes h2 {
+        background-color: #C37878; /* Different color for title background */
+        color: rgb(255, 255, 255);
+        padding: 10px; /* Add padding */
+        margin-top: 0; /* Remove default margin */
+        border-radius: px; /* Add border radius */
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .notes-content {
+        margin-left: 20px; /* Add spacing between title and content */
+        margin-right: 20px;
+    }
+
+    .textbooks {
+    background-color: #ffffff;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+    grid-gap: 20px; /* Add gap between grid items */
+    max-width: 10%;
+}
+
+.textbooks .box1 {
+    background-color: #8B8FB4;
+    color:#000000;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+    text-decoration:none;
+    text-align: center;
+}
+
+.textbooks .box2 {
+    background-color: #D5A4CD;
+    color:#000000;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+    text-decoration:none;
+    text-align: center;
+}
+
+.textbooks .box3 {
+    background-color: #A8D5C5;
+    color:#000000;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+    text-decoration:none;
+    text-align: center;
+}
+
+.textbooks .box4 {
+    background-color: #92C4D0;
+    color:#000000;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 40px;
+    height: 50px;
+    text-decoration:none;
+    text-align: center;
+}
+
+
+    .notes-and-textbooks-container {
+        display: flex;
+    }
+
+    .notes, .textbooks {
+        flex: 1; /* Equal width for both boxes */
+        margin-right: 20px; /* Add spacing between boxes */
+    }
+
+    textarea {
+    width: 45%; /* Adjust the width of the textarea */
+    height: 50px; /* Adjust the height of the textarea */
+    font-family: 'Rajdhani'; /* Set the font family */
+    font-size: 15px; /* Set the font size */
+    padding: 10px; /* Add padding to the textarea */
+    margin-bottom: 10px; /* Add margin to the bottom of the textarea */
+    }
+
+
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-links a {
+        color: #fff;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <h1>My Library</h1>
+</div>
+
+<div class="container">
+    <div class="left-boxes">
+        <a class="left-box1" href="biology.html">Biology</a>
+        <a class="left-box2" href="chem.html">Chemistry</a>
+        <a class="left-box3" href="physics.html">Physics</a>
+        <a class="left-box4" href="statistics.html">Statistics</a>
+        <a class="left-box5" href="calculus.html">Calculus</a>
+        <a class="left-box6" href="programming.html">Programming</a>
+    </div>
+    <div class="right-boxes">
+        <div class="flashcard">Flashcard
+            <div class="flashcard2"><a href="#">Topic 1: Cell Division</a></div>
+            <div class="flashcard2"><a href="#">Topic 2: Respiration</a></div>
+            <div class="flashcard2"><a href="#">Topic 3: Stimulation and Coordination</a></div>
+            <div class="flashcard2"><a href="#">Topic 4: Genetic and Mutation</a></div>
+            <button id="addTopicButton">+</button>
+        </div>
+        <div class="summary">Summary
+            <div class="class-box-container">
+                <div class="class-container">
+                    <a class="box" href="#">Class 1</a>
+                    <a class="box" href="#">Class 2</a>
+                    <a class="box" href="#">Class 3</a>
+                    <a class="box" href="#">Class 4</a>
+                    <a class="box" href="#">Class 5</a>
+                </div>
+                <button id="addClassButton">+</button> <!-- Plus button to add more class boxes -->
+            </div>
+        </div>
+
+        <div class="notes-and-textbooks-container">
+            <div class="notes">
+                <h2>Important Notes</h2>
+                <div class="notes-content" id="notesContent">
+                    <!-- Notes content goes here -->
+                </div>
+            </div>
+            <div class="textbooks">
+                <a href="textbook1.html" class="box1">TEXTBOOKS</a>
+                <a href="past_questions.html" class="box2">PAST YEAR QUESTIONS</a>
+                <a href="activity_books.html" class="box3">ACTIVITY BOOKS</a>
+                <a href="#" class="box4">+</a>
+            </div>
+            
+            
+        </div>
+        <textarea id="noteInput" placeholder="Enter your note here" onkeydown="addNote(event)"></textarea>
+    </div>
+</div>
+
+<script>
+function addNote(event) {
+    if (event.key === 'Enter') {
+        var noteInput = document.getElementById('noteInput');
+        var notesContent = document.getElementById('notesContent');
+        var noteText = noteInput.value.trim();
+        if (noteText !== '') {
+            var noteBox = document.createElement('div');
+            noteBox.className = 'box';
+            noteBox.textContent = noteText;
+            notesContent.appendChild(noteBox);
+            noteInput.value = ''; // Clear the input field
+        }
+    }
+}
+
+document.getElementById('addTopicButton').addEventListener('click', function() {
+    var newTopic = prompt('Enter new topic:');
+    if (newTopic) {
+        var flashcardContent = document.querySelector('.flashcard-content');
+        var newTopicElement = document.createElement('div');
+        newTopicElement.className = 'flashcard2';
+        newTopicElement.textContent = newTopic;
+        flashcardContent.insertBefore(newTopicElement, document.getElementById('addTopicButton'));
+    }
+});
+
+document.getElementById('addClassButton').addEventListener('click', function() {
+    var newClass = prompt('Enter new class:');
+    if (newClass) {
+        var classContainer = document.querySelector('.class-container');
+        var newClassBox = document.createElement('div');
+        newClassBox.className = 'box';
+        newClassBox.textContent = newClass;
+        classContainer.appendChild(newClassBox);
+    }
+});
+
+</script>
+
+<footer>
+    <div class="address">
+        <p>833, Lingkungan Budi, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+        <p>Tel: 03-7967 5800</p>
+        <p>Copyright &copy; Pusat Asasi Sains Universiti Malaya 2024</p>
+    </div>
+    <div class="social-links">
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://twitter.com">X (Twitter)</a>
+        <a href="https://youtube.com">Youtube</a>
+    </div>
+</footer>
+
+</body>
+</html>

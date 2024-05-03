@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streaming Page</title>
+<link rel="stylesheet" type="text/css" href="streaming.css">
+<link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    
+    .banner {
+        width: 100%;
+        height: 100px; 
+        background-image: url('banner.jpg'); 
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: calc(100vh - 120px); /* Adjust for the banner height */
+    }
+    .stream-wrapper {
+    flex: 2;
+    padding: 20px;
+    background-color: #e57c21;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    overflow-y: auto;
+    color: rgb(255, 254, 254);
+    height: 475px; /* Set height to auto */
+}
+    .comment-section {
+        flex: 1;
+        padding: 20px;
+        background-color: #ffb700;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        color: rgb(255, 255, 255);
+        height: 475px;
+    }
+    .attendance-section {
+        width: 95.8%; /* Adjusted width */
+        padding: 20px;
+        background-color: #908e7ca2;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        
+        overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    }
+    h2 {
+        margin-top: 0;
+    }
+    .comment {
+        background-color: #d87b18;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    .stream-video {
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+</style>
+
+<header class="wrapper">
+    <img class="meow" src="meowmeow.jpg">
+
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="Timetable.html">Timetable</a>
+        <a href="My Library.html">My library</a>
+        <a href="booking.html">Booking</a>
+        <a href="profilepage.html">Profile</a>
+        <a href="aboutus.html">About us</a>
+</nav>
+</header>
+
+</head>
+<body>
+<div class="banner">
+    <h1>Streaming</h1>
+</div>
+<div class="container">
+    <div class="stream-wrapper">
+        <h2>Stream Box</h2>
+            <iframe class="stream-video" width= 500 height= 278 src="https://www.youtube.com/embed/8qCJvXz0Zso" frameborder="0" allowfullscreen></iframe>
+            
+    </div>
+    <div class="comment-section">
+        <h2>Comment Section</h2>
+        <div class="comments">
+            <!-- Comments will be inserted here -->
+        </div>
+        <input type="text" id="commentInput" placeholder="Write your comment...">
+        <button onclick="submitComment()">Submit</button>
+    </div>
+</div>
+<div class="attendance-section" id="attendanceSection">
+    <h2>Mark Attendance (Assume 4444 is valid)</h2>
+    <input type="text" id="attendanceCodeInput" placeholder="Enter attendance code...">
+    <button onclick="markAttendance()">Submit</button>
+</div>
+
+<script>
+    function submitComment() {
+        var commentInput = document.getElementById("commentInput");
+        var commentText = commentInput.value.trim();
+        
+        if (commentText !== "") {
+            var currentDate = new Date();
+            var currentTime = currentDate.toLocaleTimeString();
+            var commentSection = document.querySelector(".comments");
+            var commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.innerHTML = `<p>${currentTime}: ${commentText}</p>`;
+            commentSection.insertBefore(commentDiv, commentSection.firstChild);
+            commentInput.value = "";
+        }
+    }
+
+    function markAttendance() {
+        var attendanceCodeInput = document.getElementById("attendanceCodeInput");
+        var attendanceCode = attendanceCodeInput.value.trim();
+        var attendanceSection = document.getElementById("attendanceSection");
+
+        // Check if the attendance code is valid
+        if (attendanceCode === "4444") {
+            attendanceSection.innerHTML = "<h2>Mark Attendance (Assume 4444 is valid)</h2><p>Attendance Approved</p>";
+            attendanceCodeInput.value = "";
+        } else {
+            alert("Invalid attendance code. Please try again.");
+            attendanceSection.innerHTML = "<h2>Mark Attendance (Assume 4444 is valid)</h2><p>Invalid Code</p>";
+            attendanceCodeInput.value = "";
+        }
+    }
+</script>
+
+<footer>
+    <div class="address">
+        <p>833, Lingkungan Budi, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+        <p>Tel: 03-7967 5800</p>
+        <p>Copyright &copy; Pusat Asasi Sains Universiti Malaya 2024</p>
+    </div>
+    <div class="social-links">
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://twitter.com">X (Twitter)</a>
+        <a href="https://youtube.com">Youtube</a>
+    </div>
+</footer>
+
+</body>
+</html>
